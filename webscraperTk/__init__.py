@@ -6,6 +6,11 @@ def submit_form():
     print(f"Target: {target}")
     print(f"Interval: {interval}")
 
+        # Set a minimum interval of 10 seconds (10,000 milliseconds)
+    if interval < 10000:
+        interval = 10000
+        print("Interval set to minimum value of 10 seconds (10,000 milliseconds)")
+
    # Make the GET request every interval milliseconds
     while True:
         response = requests.get(target)
