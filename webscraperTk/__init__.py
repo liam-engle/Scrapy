@@ -1,14 +1,16 @@
 import tkinter as tk
-import requests
+import requests, time
 def submit_form():
     target = target_entry.get()
     interval = int(interval_entry.get())
     print(f"Target: {target}")
     print(f"Interval: {interval}")
 
-    # Make the GET request using requests library
-    response = requests.get(target)
-    print(f"Response: {response.text}")
+   # Make the GET request every interval milliseconds
+    while True:
+        response = requests.get(target)
+        print(f"Response: {response.text}")
+        time.sleep(interval / 1000)  # Convert interval to seconds
 
 # Create the main window
 window = tk.Tk()
