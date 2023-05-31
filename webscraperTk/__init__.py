@@ -24,9 +24,17 @@ def loop_request(target, interval, max_requests):
     count = 0
     while count < max_requests:
         response = requests.get(target)
-        print(f"Response {count}:\n {response.text}")
+        print(f"Response: {response.text}")
         count += 1
         time.sleep(interval / 1000)  # Convert interval to seconds
+
+    reset_defaults()
+
+def reset_defaults():
+    interval_entry.delete(0, tk.END)
+    max_requests_entry.delete(0, tk.END)
+    interval_entry.insert(tk.END, "10000")
+    max_requests_entry.insert(tk.END, "10")
 
 # Create the main window
 window = tk.Tk()
@@ -55,6 +63,7 @@ max_requests_entry = tk.Entry(frame)
 max_requests_entry.pack()
 
 # Set default values
+target_entry.insert(tk.END,"http://")
 interval_entry.insert(tk.END, "10000")
 max_requests_entry.insert(tk.END, "10")
 
