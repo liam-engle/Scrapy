@@ -53,12 +53,16 @@ window.title("Scrapy: Scrape The Net")
 window.iconbitmap("./webscraperTk/network-tower.ico")
 # Create a frame
 frame = tk.Frame(window)
-frame.pack()
+frame.pack(expand=True,side='left')
+
+#Create a second frame
+logo_frame = tk.Frame(window)
+logo_frame.pack(expand=True,side='top')
 
 # Create the logo label
 logo_image = tk.PhotoImage(file="./webscraperTk/logo.png")
-logo_label = tk.Label(frame, image=logo_image)
-logo_label.pack()
+logo_label = tk.Label(logo_frame, image=logo_image)
+logo_label.pack(expand=True,side='top',fill='both')
 
 # Create the target entry
 target_label = tk.Label(frame, text="Target:")
