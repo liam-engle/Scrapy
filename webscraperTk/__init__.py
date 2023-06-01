@@ -52,8 +52,8 @@ window = tk.Tk()
 window.title("Scrapy: Scrape The Net")
 window.iconbitmap("./webscraperTk/network-tower.ico")
 # Create a frame
-frame = tk.Frame(window)
-frame.pack(expand=True,side='left')
+form = tk.Frame(window)
+form.pack(expand=True,side='left')
 
 #Create a second frame
 logo_frame = tk.Frame(window)
@@ -65,30 +65,30 @@ logo_label = tk.Label(logo_frame, image=logo_image)
 logo_label.pack(expand=True,side='top',fill='both')
 
 # Create the target entry
-target_label = tk.Label(frame, text="Target:")
+target_label = tk.Label(form, text="Target:")
 target_label.pack()
-target_entry = tk.Entry(frame)
+target_entry = tk.Entry(form)
 target_entry.pack()
 
 # Set default value for target_entry
 target_entry.insert(tk.END, "http://")
 
 # Create the interval entry
-interval_label = tk.Label(frame, text="Interval (ms):")
+interval_label = tk.Label(form, text="Interval (ms):")
 interval_label.pack()
-interval_entry = tk.Entry(frame)
+interval_entry = tk.Entry(form)
 interval_entry.pack()
 
 # Create the max requests entry
-max_requests_label = tk.Label(frame, text="Max Requests:")
+max_requests_label = tk.Label(form, text="Max Requests:")
 max_requests_label.pack()
-max_requests_entry = tk.Entry(frame)
+max_requests_entry = tk.Entry(form)
 max_requests_entry.pack()
 
 # Create the identifier entry
-identifier_label = tk.Label(frame, text="Identifier:")
+identifier_label = tk.Label(form, text="Identifier:")
 identifier_label.pack()
-identifier_entry = tk.Entry(frame)
+identifier_entry = tk.Entry(form)
 identifier_entry.pack()
 
 # Set default values
@@ -96,7 +96,7 @@ interval_entry.insert(tk.END, "10000")
 max_requests_entry.insert(tk.END, "10")
 
 # Create the submit button
-submit_button = tk.Button(frame, text="Submit", command=submit_form)
+submit_button = tk.Button(form, text="Submit", command=submit_form)
 submit_button.pack()
 
 # Run the main loop
