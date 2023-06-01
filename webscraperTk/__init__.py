@@ -34,7 +34,7 @@ def loop_request(target, interval, max_requests, identifier):
     reset_defaults()
 
 def save_response(response, identifier, count):
-    file_name = f"./log/{identifier}_{count}.txt"
+    file_name = f"./webscraperTk/log/{identifier}_{count}.txt"
     with open(file_name, 'w') as file:
         file.write(response)
     print(f"Response saved as {file_name}")
@@ -49,11 +49,16 @@ def reset_defaults():
 
 # Create the main window
 window = tk.Tk()
-window.title("Form")
-
+window.title("Scrapy: Scrape The Net")
+window.iconbitmap("./webscraperTk/network-tower.ico")
 # Create a frame
 frame = tk.Frame(window)
 frame.pack()
+
+# Create the logo label
+logo_image = tk.PhotoImage(file="./webscraperTk/logo.png")
+logo_label = tk.Label(frame, image=logo_image)
+logo_label.pack()
 
 # Create the target entry
 target_label = tk.Label(frame, text="Target:")
