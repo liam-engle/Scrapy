@@ -51,14 +51,6 @@ def reset_defaults():
 window = tk.Tk()
 window.title("Form")
 
-# Create a canvas for the logo
-canvas = tk.Canvas(window, width=200, height=200)
-canvas.pack()
-
-# Add a placeholder image for the logo
-logo_image = tk.PhotoImage(file="placeholder_logo.png")
-canvas.create_image(100, 100, image=logo_image)
-
 # Create a frame
 frame = tk.Frame(window)
 frame.pack()
