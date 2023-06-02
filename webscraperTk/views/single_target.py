@@ -41,7 +41,7 @@ class single_target(tk.Frame):
         # Create the submit button
         submit_button = tk.Button(self, text="Submit", command=self.submit_form)
         submit_button.pack()
-
+        
     def submit_form(self):
         target = self.target_entry.get()
         interval = int(self.interval_entry.get())
@@ -60,6 +60,7 @@ class single_target(tk.Frame):
         # Start the loop in a separate thread
         thread = threading.Thread(target=self.loop_request, args=(target, interval, max_requests, identifier))
         thread.start()
+
 
     def save_response(self, response, identifier, count):
         file_name = f"./webscraperTk/log/{identifier}_{count}.txt"

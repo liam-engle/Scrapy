@@ -1,2 +1,3 @@
 #ignore the files created by Scrapy2
 log/*
+*/data/*

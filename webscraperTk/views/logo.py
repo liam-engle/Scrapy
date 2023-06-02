@@ -19,4 +19,4 @@ class builder(tk.Label):
         self.image = photo  # Store a reference to prevent the image from being garbage collected
 
         # Adjust the label size to fit the image
-        self.configure(width=500, height=500)
+        self.configure(width=200, height=200)
