@@ -4,10 +4,13 @@ import time
 from views import single_target as st
 from views import selection
 from views import multi_target
-
+from views import logo
 # Create the main window
 window = tk.Tk()
 window.title("Scrapy: Scrape The Net")
+# Add Logo
+logo_widget = logo.builder(window,"./webscraperTk/logo.png")
+logo_widget.pack()
 # Add a Selection here
 radio = selection.RadioButtonFrame(window,{"Single Target":"single","Multi Target":"multi"})
 radio.pack()
